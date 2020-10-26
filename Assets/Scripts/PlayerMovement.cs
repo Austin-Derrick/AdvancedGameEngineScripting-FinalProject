@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
+
     public Rigidbody playerRB;
 
     public float moveSpeed;
@@ -14,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 1f;
 
     public Transform viewCam;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
